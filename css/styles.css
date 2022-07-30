@@ -1,25 +1,35 @@
-/* todo разобратись з фоном на весь екран */
-
+/* todo зафіксувати хедер */
+/* todo анімувати градієнтом карртинки по ховеру */
+/* todo синім щоб світилось на кожній сторінці */
+/* todo перенос бекдропу */
 :root {
-    --logo-brand-color: #2196f3;
-    --btn-hover-bgcolor: #188CE8;
+    --brand-main-color: #2196f3;
+    --brand-bg-color: #2F303A;
+    --brand-black: #212121;
+    --brand-grey: #757575;
+    --brand-bg-grey: #F5F4FA;
+
+    --btn-hover-color: #188CE8;
+    --icons-grey: #AFB1B8;
+
     --logo-positive-color: #000;
     --logo-negative-color: #fff;
-    --grey: #757575;
-    --black: #212121;
-    --white: #fff;
-    --background-brand-color: #2F303A;
-    --background-btn-color: #F5F4FA;
-    --social-grey: #AFB1B8;
 
+    --simple-white: #fff;
+    
+    --brand-font: "Roboto";
+    --brand-letter-spacing: 0.03em;
+
+    --brand-logo-font: 'Raleway';
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ============= Скидання стилів ============= */
+/* ========== Скидання стилів ========== */
 body {
-    background-color: var(--white);
-    font-family: "Roboto", sans-serif;
-    letter-spacing: 0.03em;
-    color: var(--grey);
+    background-color: var(--simple-white);
+    font-family: var(--brand-font), sans-serif;
+    letter-spacing: var(--brand-letter-spacing);
+    color: var(--brand-grey);
 }
 
 h1, h2, h3, p {
@@ -45,13 +55,76 @@ a {
     text-decoration: none;
 }
 
+/* Заборона зміну розміру в textarea */
 textarea {
     resize: none;
 }
-/* ============= /Скидання стилів ============= */
+
+button {
+    cursor: pointer;
+}
+/* ========== /Скидання стилів ========== */
 
 
-/* ============= Компоненти ============= */
+
+/* ========== Компоненти (блоки) ========== */
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+/* .visually-hidden {
+    position: fixed;
+    transform: scale(0);
+} */
+
+/* === Кнопки === */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    border: transparent;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--simple-white);
+    background-color: var(--brand-main-color);
+    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color var(--transition);
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--btn-hover-color);
+}
+
+.icon-subscribe-button {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    margin-left: 10px;
+}
+/* === /Кнопки === */
+
+/* Контейнер */
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -60,13 +133,13 @@ textarea {
     padding-right: 15px;
 }
 
-/* соцмережі */
+/* Секція */
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
 }
 
-/* соціальні мережі */
+/* === соціальні мережі === */
 .socials {
     display: flex;
     justify-content: center;
@@ -84,16 +157,16 @@ textarea {
     width: 44px;
     border-radius: 50%;
 
-    color: var(--social-grey);
-    background-color: var(--white);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--icons-grey);
+    background-color: var(--simple-white);
+    transition: background-color var(--transition),
+                color var(--transition);
 }
 
 .social-link:hover,
 .social-link:focus {
-    background-color: var(--logo-brand-color);
-    color: var(--white);
+    background-color: var(--brand-main-color);
+    color: var(--simple-white);
 }
 
 .social-link-icon {
@@ -103,27 +176,16 @@ textarea {
 }
 
 footer .social-link {
-    color: var(--white);
+    color: var(--simple-white);
     background-color: rgba(255, 255, 255, 0.1);
 }
+/* === /соціальні мережі === */
 
-.visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
-}
-/* ============= /Компоненти ============= */
+/* ========== /Компоненти ========== */
 
 
 
-/* ============= Верхній рядок ============= */
+/* ========== Верхній рядок ========== */
 .head-border {
     border-bottom: 1px solid #ECECEC;
 }
@@ -142,11 +204,11 @@ footer .social-link {
 .logo {
     display: block;
 
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--brand-logo-font), sans-serif;
     font-weight: 700;
     font-size: 26px;
     line-height: 1.2;
-    color: var(--logo-brand-color);
+    color: var(--brand-main-color);
 }
 .logo-positive { 
     color: var(--logo-positive-color); 
@@ -181,8 +243,8 @@ footer .social-link {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: var(--black);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--brand-black);
+    transition: color var(--transition);
 }
 
 .menu-link::after {
@@ -194,10 +256,10 @@ footer .social-link {
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    background-color: var(--logo-brand-color);
+    background-color: var(--brand-main-color);
 
     transform: scale(0);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition);
 }
 
 .menu-link:hover::after,
@@ -232,32 +294,32 @@ footer .social-link {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: var(--grey);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--brand-grey);
+    transition: color var(--transition);
 }
 
 .menu-link:hover,
 .menu-link:focus,
 .contact-link:hover,
 .contact-link:focus {
-    color: var(--logo-brand-color);
+    color: var(--brand-main-color);
 }
 
 .icon-top-contacts {
     margin-right: 10px;
     fill: currentColor;
 }
-/* ============= /Верхній рядок ============= */
+/* ========== /Верхній рядок ========== */
 
 
 
-/* ============= Секція героя ============= */
+/* ========== Секція героя ========== */
 .hero {
     padding-top: 200px;
     padding-bottom: 200px;
 
     text-align: center; /* наслідується до дітей */
-    background-color: var(--background-brand-color);
+    background-color: var(--brand-bg-color);
 }
 
 .overlay {
@@ -275,7 +337,7 @@ footer .social-link {
     background-position: center;
     background-size: cover;
     background-color: #C4C4C4;
-} 
+}
 
 .hero-title {
     margin-bottom: 30px;
@@ -285,37 +347,14 @@ footer .social-link {
     line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--simple-white);
 }
 
-.order-button {
-    width: 200px;
-    height: 50px;
-    padding: 10px;
-    border-radius: 4px;
-    border: transparent;
-
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
-    color: var(--white);
-    background-color: var(--logo-brand-color);
-    cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.order-button:hover,
-.order-button:focus {
-    background-color: var(--btn-hover-bgcolor);
-}
-/* ============= /Секція героя ============= */
+/* ========== /Секція героя ========== */
 
 
 
-/* ============= Особливості ============= */
+/* ========== Особливості ========== */
 .features { display: flex; }
 
 .features-item:not(:last-child) { 
@@ -336,7 +375,7 @@ footer .social-link {
     height: 120px;
     margin-bottom: 30px;
     
-    background-color: var(--background-btn-color);
+    background-color: var(--brand-bg-grey);
 }
 
 .icon-features {
@@ -350,18 +389,18 @@ footer .social-link {
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
-    color: var(--black);
+    color: var(--brand-black);
 }
 
 .features-text {
     font-size: 14px;
     line-height: 1.71;
-    color: var(--grey);
+    color: var(--brand-grey);
 }
-/* ============= /Особливості ============= */
+/* ========== /Особливості ========== */
 
 
-/* ============= Чим ми займаємось ============= */
+/* ========== Чим ми займаємось ========== */
 .section-offers {
     padding-top: 0;
 }
@@ -373,7 +412,7 @@ footer .social-link {
     font-size: 36px;
     line-height: 1.16;
     text-align: center;
-    color: var(--black);
+    color: var(--brand-black);
 }
 
 .offers { 
@@ -406,16 +445,16 @@ footer .social-link {
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--simple-white);
     
     background-color: rgba(47, 48, 58, 0.8);
 }
-/* ============= /Чим ми займаємось ============= */
+/* ========== /Чим ми займаємось ========== */
 
 
-/* ============= Наша команда ============= */
+/* ========== Наша команда ========== */
 .section-team {
-    background-color: var(--background-btn-color);
+    background-color: var(--brand-bg-grey);
 }
 
 .employee { 
@@ -425,7 +464,7 @@ footer .social-link {
 .employee-item { 
     align-items: center; 
 
-    background-color: var(--white);
+    background-color: var(--simple-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -445,7 +484,7 @@ footer .social-link {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.18;
-    color: var(--black);
+    color: var(--brand-black);
 }
 
 .employee-posiition {
@@ -454,12 +493,12 @@ footer .social-link {
 
     font-size: 16px;
     line-height: 1.18;
-    color: var(--grey);
+    color: var(--brand-grey);
 }
-/* ============= /Наша команда ============= */
+/* ========== /Наша команда ========== */
 
 
-/* ============= Постійні клієнти ============= */
+/* ========== Постійні клієнти ========== */
 .customers {
     display: flex;
     justify-content: center;
@@ -485,17 +524,17 @@ footer .social-link {
     align-items: center;
     width: 170px;
     height: 92px;
-    border: 1px solid #AFB1B8;
+    border: 1px solid var(--icons-grey);
     border-radius: 4px;
-    color: #AFB1B8;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--icons-grey);
+    transition: color var(--transition),
+                border var(--transition);
 }
 
 .customer-link:hover,
 .customer-link:focus {
-    color: var(--logo-brand-color);
-    border: 1px solid var(--logo-brand-color);
+    color: var(--brand-main-color);
+    border: 1px solid var(--brand-main-color);
 }
 
 .customer-link-icon {
@@ -503,16 +542,16 @@ footer .social-link {
     width: 106px;
     height: 60px;
 }
-/* ============= /Постійні клієнти ============= */
+/* ========== /Постійні клієнти ========== */
 
 
 
-/* ============= footer ============= */
+/* ========== footer ========== */
 .footer {
     padding-top: 60px;
     padding-bottom: 60px;
 
-    background-color: var(--background-brand-color);
+    background-color: var(--brand-bg-color);
 }
 
 .footer-columns {
@@ -541,12 +580,12 @@ footer .logo {
 
 .footer-contact {
     color: rgba(255, 255, 255, 0.6);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition);
 }
 
 .footer-address {
-    color: var(--white);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--simple-white);
+    transition: color var(--transition);
 }
 
 /* * «С5» Текст контактів в !хедері! і !футері! змінює колір при ховері і фокусі. */
@@ -554,7 +593,7 @@ footer .logo {
 .footer-contact:focus,
 .footer-address:hover,
 .footer-address:focus {
-    color: var(--logo-brand-color);
+    color: var(--brand-main-color);
 }
 
 .footer-socials {
@@ -567,7 +606,7 @@ footer .logo {
     line-height: 1.14;
     text-transform: uppercase;
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--simple-white);
 }
 
 .subscribe {
@@ -581,22 +620,18 @@ footer .logo {
     flex-direction: column;
 }
 
-label.footer-title {
-    display: block;
-}
-
-.subscribe-field input {
+    .subscribe-field input {
     
     width: 358px;
     
     padding: 15px 16px;
     
-    background-color: var(--background-brand-color);
+    background-color: var(--brand-bg-color);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
 
-    color: var(--white);
+    color: var(--simple-white);
 }
 
 .subscribe-field input::placeholder {
@@ -609,22 +644,7 @@ label.footer-title {
     margin-left: 12px;
 }
 
-.subscribe-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 0;
-    left: 0;
-}
-
-.icon-subscribe-button {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-    margin-left: 10px;
-}
-
-/* ============= /footer ============= */
+/* ========== /footer ========== */
 
 
 
@@ -632,7 +652,7 @@ label.footer-title {
 
 /* ! Portfolio styles (main) */
 
-/* ============= фільр-кнопки ============= */
+/* ========== фільр-кнопки ========== */
 /* todo Мають бути Радіо-кнопки */
 .filter-btns {
     display: flex;
@@ -646,16 +666,14 @@ label.footer-title {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
-    color: var(--black);
-    background-color: var(--background-btn-color);
+    color: var(--brand-black);
+    background-color: var(--brand-bg-grey);
     border: transparent;
     border-radius: 4px;
 
-    cursor: pointer;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition),
+                background-color var(--transition),
+                box-shadow var(--transition);
 }
 
 
@@ -666,17 +684,17 @@ label.footer-title {
 
 .filter-btn:hover,
 .filter-btn:focus {
-    color: var(--white);
-    background-color: var(--logo-brand-color);
+    color: var(--simple-white);
+    background-color: var(--brand-main-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
                 0px 1px 2px rgba(0, 0, 0, 0.08),
                 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-/* ============= /фільр-кнопки ============= */
+/* ========== /фільр-кнопки ========== */
 
 
 
-/* ============= Зразки робіт (картки) ============= */
+/* ========== Зразки робіт (картки) ========== */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -692,7 +710,7 @@ label.footer-title {
 
 .card-item-link {
     display: block; /* без цього не працює ховер. Чому? */
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow var(--transition);
 }
 
 .card-item-link:hover,
@@ -702,8 +720,11 @@ label.footer-title {
                 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+/* === Анімація по картці === */
 .card-item-animation {
     position: relative;
+    
+    /* ховаємо все, що виходить за рамки елементу */
     overflow: hidden;
 }
 
@@ -720,8 +741,8 @@ label.footer-title {
 
     opacity: 0;
     transform: translate(0, 100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition),
+                opacity var(--transition);
 }
 
 .card-item-text {
@@ -736,16 +757,19 @@ label.footer-title {
     height: 100%;
 
     padding: 24px;
-    overflow: hidden;
+
+    /* даємо тексту скролл*/
+    overflow: auto;
+
 
     font-size: 18px;
     line-height: 1.56;
-    color: var(--white);
+    color: var(--simple-white);
 
     opacity: 0;
     transform: translate(0, 100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition),
+                opacity var(--transition);
 }
 
 .card-item-link:hover .card-item-animation::before,
@@ -755,14 +779,11 @@ label.footer-title {
     opacity: 1;
     transform: translate(0, 0);
 }
-
+/* === /Анімація по картці === */
 
 /* * «B17» У картках на сторінці Портфоліо є рамка (властивість border), але тільки у нижній частині картки. */
 .card-item-frame {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 20px 24px;
 
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
@@ -776,20 +797,21 @@ label.footer-title {
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
-    color: var(--black);
+    color: var(--brand-black);
 }
 
 .card-item-description {
     font-size: 16px;
     line-height: 1.88;
-    color: var(--grey);
+    color: var(--brand-grey);
 }
-/* ============= /Зразки робіт (картки) ============= */
+/* ========== /Зразки робіт (картки) ========== */
 
 
 
-/* ============= Модальне вікно ============= */
-/* фон */
+/* ========== МОДАЛЬНЕ ВІКНО ========== */
+
+/* Оверлей модального вікна */
 .backdrop {
     position: fixed;
     top: 0;
@@ -798,8 +820,8 @@ label.footer-title {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
 
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--transition),
+                visibility var(--transition);
 }
 
 .backdrop.is-hidden {
@@ -810,27 +832,28 @@ label.footer-title {
 
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.85);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition),
+                visibility var(--transition);
 }
+/* /Оверлей модального вікна */
 
-/* загальне вікно */
+/* Основне вікно */
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 528px;
-    text-align: center;
+    /* text-align: center; */
     padding: 40px;
 
-    background-color: var(--white);
+    background-color: var(--simple-white);
     
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition);
 }
 
-/* кнопка закриття зверху праворуч */
-.order-button-close {
+/* Кнопка закриття зверху праворуч */
+.button-close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -843,16 +866,15 @@ label.footer-title {
     
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: var(--white);
-    cursor: pointer;
+    background-color: var(--simple-white);
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--transition),
+                color var(--transition);
 }
 
-.order-button-close:hover,
-.order-button-close:focus {
-    color: var(--logo-brand-color);
+.button-close:hover,
+.button-close:focus {
+    color: var(--brand-main-color);
 }
 
 .button-close-icon {
@@ -862,6 +884,7 @@ label.footer-title {
     background-position: 50% 50%;
     background-origin: border-box;
 }
+/* /Кнопка закриття зверху праворуч */
 
 /* заголовок */
 .modal-header {
@@ -872,10 +895,10 @@ label.footer-title {
     font-size: 20px;
     line-height: 1.15;
     text-align: center;
-    color: var(--black);
+    color: var(--brand-black);
 }
 
-/* поля форми */
+/* Поля форми */
 .form-fields {
     margin-bottom: 20px;
     text-align: left;
@@ -888,16 +911,15 @@ label.footer-title {
     font-size: 12px;
     line-height: 1.67;
     letter-spacing: 0.01em;
-    color: var(--grey);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--brand-grey);
+    transition: color var(--transition);
 }
 
 .form-field-item:not(:last-child) {
     margin-bottom: 10px;
 }
 
-
-.form-field-item input {
+.form-field-item .type {
     padding: 12px 16px 12px 42px;
 
     font-size: 16px;
@@ -907,34 +929,25 @@ label.footer-title {
     border-radius: 4px;
     border-color: rgba(33, 33, 33, 0.2);
 
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color var(--transition);
 }
 
-.form-field-item textarea {
+.form-field-item .type--textarea {
     padding: 12px 16px;
     height: 96px;
-
-    font-size: 16px;
-    line-height: 1.14;
-    letter-spacing: 0.01em;
-
-    border: 1px solid;
-    border-radius: 4px;
-    border-color: rgba(33, 33, 33, 0.2);
-
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* /Поля форми */
 
 /* бордер на полях введення (може не треба?), і оутлайн коли прибрали мишку з поля */
 .form-field-item:focus .type,
 .form-field-item:hover .type,
 .form-field-item .type:focus-within {
-    /* border-color: var(--logo-brand-color); */
-    outline: 1px solid var(--logo-brand-color);
+    /* border-color: var(--brand-main-color); */
+    outline: 1px solid var(--brand-main-color);
 }
 
 /* стилі плейсхолдера */
-.form-field-item textarea::placeholder {
+.form-field-item .type--textarea::placeholder {
     color: rgba(117, 117, 117, 0.5);
     font-size: 12px;
     line-height: 1.167;
@@ -945,12 +958,12 @@ label.footer-title {
     margin-bottom: 4px;
 }
 
-/* іконки на полях введення */
+/* Іконки на полях введення */
 .modal-box-icon {
     display: flex;
     flex-direction: column;
     position: relative;
-    color: var(--black);
+    color: var(--brand-black);
 }
 
 .form-icon {
@@ -959,7 +972,6 @@ label.footer-title {
     height: 18px;
     top: 50%;
     transform: translateY(-50%);
-    /* margin: 0 12px; */
     left: 12px;
 
     fill: currentColor;
@@ -967,13 +979,10 @@ label.footer-title {
 
 .form-field-item:focus-within .form-icon,
 .form-field-item:focus .form-icon,
-.form-field-item:hover .form-icon
-
-{
-    color: var(--logo-brand-color);
+.form-field-item:hover .form-icon {
+    color: var(--brand-main-color);
 }
-
-
+/* /Іконки на полях введення */
 
 /* поле згоди з умовами */
 .accept-module {
@@ -981,24 +990,22 @@ label.footer-title {
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition: color var(--transition);
 }
 
 .accept-module:hover,
 .accept-module:focus {
-    color: var(--logo-brand-color);
-    /* outline: 1px solid var(--logo-brand-color); */
-    /* border: 1px solid var(--logo-brand-color); */
+    color: var(--brand-main-color);
+    /* outline: 1px solid var(--brand-main-color); */
+    /* border: 1px solid var(--brand-main-color); */
     /* border-radius: 4px; */
 }
 
 /* міняю колір іконки чек-боксу при ховері/фокусі */
 .accept-module:hover .icon-checked,
 .accept-module:focus .icon-checked {
-    border-color: var(--logo-brand-color);
+    border-color: var(--brand-main-color);
 }
-
 
 /* lable з іконкою чекбокосу і текстом "приймаю умови" */
 .accepting {
@@ -1008,14 +1015,7 @@ label.footer-title {
     line-height: 1.71;
 }
 
-/* .accepting:focus, */
-/* .accepting:hover { */
-    /* outline: 1px solid var(--logo-brand-color); */
-    /* border: 1px solid var(--logo-brand-color); */
-    /* border-radius: 4px; */
-/* } */
-
-/* коробка з іконкою - за замовчуванням без кольору */
+/* коробка з іконкою чекбоксу - за замовчуванням без кольору */
 .icon-accept-box {
     display: flex;
     align-items: center;
@@ -1031,19 +1031,18 @@ label.footer-title {
 
     fill: currentColor;
     
-    border: 1px solid var(--black);
+    border: 1px solid var(--brand-black);
     border-radius: 4px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color var(--transition);
 }
 
 /* приховане поле input з type="checkbox" */
 /* зміна стилю іконки чекбоксу при натисканні на .accept-module  */
 .checkboxed:checked + label .icon-checked {
-    /* ? чомусь не спрацьовує background-origin - іконка не стає більшою поки є border*/
     /* background-origin: border-box; */
-    color: var(--logo-brand-color);
+    color: var(--brand-main-color);
 
-    background-color: var(--logo-brand-color);
+    background-color: var(--brand-main-color);
     background-size: contain;
 
     /* якщо не задати бордер=0, то іконка лишається зменшеною */
@@ -1057,6 +1056,6 @@ label.footer-title {
 /* додаткова стилізація посилання на "Умови договору" */
 .link-terms {
     text-decoration: underline;
-    color: var(--logo-brand-color);
+    color: var(--brand-main-color);
 }
-/* ============= /Модальне вікно ============= */
+/* ========== /МОДАЛЬНЕ ВІКНО ========== */
