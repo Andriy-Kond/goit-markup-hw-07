@@ -1,7 +1,7 @@
 /* todo зафіксувати хедер */
 /* todo анімувати градієнтом карртинки по ховеру */
-/* todo синім щоб світилось на кожній сторінці */
 /* todo перенос бекдропу */
+
 :root {
     --brand-main-color: #2196f3;
     --brand-bg-color: #2F303A;
@@ -267,7 +267,11 @@ footer .social-link {
     transform: scale(1);
 }
 
-.menu-link.current::after {
+/* .menu-link */
+.current {
+    color: var(--brand-main-color);
+}
+.current::after {
     transform: scale(1);
 }
 
