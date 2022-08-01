@@ -12,9 +12,7 @@ Use a better box model (opinionated).
 *,
 ::before,
 ::after {
-    box-sizing: inherit;
-    /* * було так: box-sizing: inherit; */
-    /* *але у Репети було inherit     */
+    box-sizing: border-box;
 }
 
 /**

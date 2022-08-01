@@ -10,10 +10,8 @@ Use a better box model (opinionated).
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  /* * було так: box-sizing: inherit; */
-  /* *але у Репети було inherit     */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /**
@@ -306,6 +304,8 @@ textarea {
 
 button {
   cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* ========== /СКИДАННЯ СТИЛІВ ========== */
@@ -470,9 +470,7 @@ button {
   height: 600px;
   margin-left: auto;
   margin-right: auto;
-  
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/background/hero-pic.jpg");
-
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/background/hero-pic.jpg");
   background-repeat: no-repeat;
   background-position: center;

@@ -64,6 +64,7 @@ textarea {
 }
 
 button {
+    box-sizing: border-box;
     cursor: pointer;
 }
 /* ========== /СКИДАННЯ СТИЛІВ ========== */
@@ -194,6 +195,7 @@ button {
     margin-left: auto;
     margin-right: auto;
 
+    
     background-image:
         linear-gradient(rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)),

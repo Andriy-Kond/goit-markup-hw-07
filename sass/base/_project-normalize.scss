@@ -6,6 +6,7 @@ body {
     color: var(--brand-grey);
 }
 
+
 h1,
 h2,
 h3,
@@ -40,6 +41,7 @@ textarea {
 
 button {
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 /* ========== /СКИДАННЯ СТИЛІВ ========== */
