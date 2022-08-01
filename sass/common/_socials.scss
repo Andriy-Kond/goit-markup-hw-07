@@ -2,13 +2,19 @@
 .socials {
     display: flex;
     justify-content: center;
+
+    &__item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &__icon {
+        fill: currentColor;
+        width: 20px;
+        height: 20px;
+    }
 }
 
-.socials__item:not(:last-child) {
-    margin-right: 10px;
-}
-
-.social__link {
+.socials__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,23 +26,19 @@
     background-color: var(--simple-white);
     transition: background-color var(--transition),
         color var(--transition);
-}
-
-.social__link:hover,
-.social__link:focus {
-    background-color: var(--brand-main-color);
-    color: var(--simple-white);
-}
-
-.social__icon {
-    fill: currentColor;
-    width: 20px;
-    height: 20px;
-}
-
-.social__link--footer-colorize {
+    
+    &:hover,
+    &:focus {
+        background-color: var(--brand-main-color);
+        color: var(--simple-white);
+    }
+    
+    &--footer-colorize {
     color: var(--simple-white);
     background-color: rgba(255, 255, 255, 0.1);
+    }
 }
+
+
 
 /* === /Соціальні мережі === */

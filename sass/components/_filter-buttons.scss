@@ -5,6 +5,10 @@
     justify-content: center;
     margin-bottom: 50px;
     user-select: none;
+
+    &__item:not(:last-child) {
+        margin-right: 8px;
+    }
 }
 
 .filter-btns__btn {
@@ -21,19 +25,14 @@
     transition: color var(--transition),
         background-color var(--transition),
         box-shadow var(--transition);
-}
 
-.filter-btns__item:not(:last-child) {
-    margin-right: 8px;
+    &:hover,
+    &:focus {
+        color: var(--simple-white);
+        background-color: var(--brand-main-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+            0px 1px 2px rgba(0, 0, 0, 0.08),
+            0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
 }
-
-.filter-btns__btn:hover,
-.filter-btns__btn:focus {
-    color: var(--simple-white);
-    background-color: var(--brand-main-color);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-        0px 1px 2px rgba(0, 0, 0, 0.08),
-        0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
 /* ========== /ФІЛЬТР-КНОПКИ ========== */

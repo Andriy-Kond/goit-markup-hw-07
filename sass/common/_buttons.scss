@@ -21,22 +21,21 @@
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     transition: background-color var(--transition);
-}
+    
+    &:hover,
+    &:focus {
+        background-color: var(--btn-hover-color);
+    }
 
-.btn:hover,
-.btn:focus {
-    background-color: var(--btn-hover-color);
+    &__subscribe-icon {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+        margin-left: 10px;
+    }
+    
 }
-
-.btn__subscribe-icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-    margin-left: 10px;
-}
-
 /* === /Кнопка основна === */
-
 
 /* === Кнопка закриття зверху праворуч === */
 .btn-close {
@@ -56,19 +55,20 @@
 
     transition: background-color var(--transition),
         color var(--transition);
+    &:hover,
+    &:focus {
+        color: var(--brand-main-color);
+    }
+
+    &__icon {
+        fill: currentColor;
+        width: 18px;
+        height: 18px;
+        background-position: 50% 50%;
+        background-origin: border-box;
+    }
 }
 
-.btn-close:hover,
-.btn-close:focus {
-    color: var(--brand-main-color);
-}
 
-.btn-close__icon {
-    fill: currentColor;
-    width: 18px;
-    height: 18px;
-    background-position: 50% 50%;
-    background-origin: border-box;
-}
 
 /* === /Кнопка закриття зверху праворуч === */

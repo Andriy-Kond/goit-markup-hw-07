@@ -15,18 +15,15 @@
     />
 
     <!-- стилі -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    />
-    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/modern-normalize.css" />
+    <link rel="stylesheet" href="./css/main.min.css"/>
     <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
   </head>
 
   <body>
     <!-- верхній рядок -->
     <header class="head-border">
-      <div class="container head-nav">
+      <div class="container nav-panel">
         <!-- Навігація-->
         <nav class="nav">
           <!-- логотип -->
@@ -41,9 +38,7 @@
             </li>
 
             <li class="menu__item">
-              <a href="./portfolio.html" class="menu__link current">
-                Портфоліо
-              </a>
+              <a href="./portfolio.html" class="menu__link current"> Портфоліо </a>
             </li>
             <li class="menu__item">
               <a href="./" class="menu__link">Контакти</a>
@@ -304,6 +299,7 @@
             <a href="./" class="logo footer__logo"
               >Web<span class="logo--negative">Studio</span></a
             >
+
             <address class="address">
               <ul>
                 <li class="address__item">
@@ -342,12 +338,12 @@
             <ul class="socials">
               <li class="socials__item">
                 <a
-                  class="social__link social__link--footer-colorize"
+                  class="socials__link socials__link--footer-colorize"
                   href="https://www.instagram.com/"
                   target="_blank"
                   rel="noreferrer noopener nofollow"
                 >
-                  <svg class="social__icon">
+                  <svg class="socials__icon">
                     <use href="./images/background/icons.svg#instagram"></use>
                   </svg>
                 </a>
@@ -355,12 +351,12 @@
 
               <li class="socials__item">
                 <a
-                  class="social__link social__link--footer-colorize"
+                  class="socials__link socials__link--footer-colorize"
                   href="https://twitter.com"
                   target="_blank"
                   rel="noreferrer noopener nofollow"
                 >
-                  <svg class="social__icon">
+                  <svg class="socials__icon">
                     <use href="./images/background/icons.svg#twitter"></use>
                   </svg>
                 </a>
@@ -368,12 +364,12 @@
 
               <li class="socials__item">
                 <a
-                  class="social__link social__link--footer-colorize"
+                  class="socials__link socials__link--footer-colorize"
                   href="https://www.facebook.com/"
                   target="_blank"
                   rel="noreferrer noopener nofollow"
                 >
-                  <svg class="social__icon">
+                  <svg class="socials__icon">
                     <use href="./images/background/icons.svg#facebook"></use>
                   </svg>
                 </a>
@@ -381,12 +377,12 @@
 
               <li class="socials__item">
                 <a
-                  class="social__link social__link--footer-colorize"
+                  class="socials__link socials__link--footer-colorize"
                   href="https://www.linkedin.com/"
                   target="_blank"
                   rel="noreferrer noopener nofollow"
                 >
-                  <svg class="social__icon">
+                  <svg class="socials__icon">
                     <use href="./images/background/icons.svg#linkedin"></use>
                   </svg>
                 </a>
@@ -405,6 +401,7 @@
                 name="subscribe"
                 id="subscribe"
                 placeholder="E-mail"
+                class="footer__subscribe-input"
               />
             </div>
 

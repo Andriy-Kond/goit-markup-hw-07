@@ -10,20 +10,19 @@
 
     transition: opacity var(--transition),
         visibility var(--transition);
-}
 
-.backdrop.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
 
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0.85);
-    transition: transform var(--transition),
-        visibility var(--transition);
+    &.is-hidden .modal {
+        transform: translate(-50%, -50%) scale(0.85);
+        transition: transform var(--transition),
+            visibility var(--transition);
+    }
 }
-
 /* /Оверлей модального вікна */
 
 /* Головне вікно */
@@ -44,8 +43,6 @@
     user-select: none;
 }
 
-
-
 /* Заголовок модального вікна*/
 .modal__header {
     display: block;
@@ -56,12 +53,12 @@
     line-height: 1.15;
     text-align: center;
     color: var(--brand-black);
-}
 
 /* Загальні стилі */
-.modal__fields {
-    margin-bottom: 20px;
-    text-align: left;
+    &__fields {
+        margin-bottom: 20px;
+        text-align: left;
+    }
 }
 
 /* === Стилі полів ввведення інформацції === */
@@ -74,10 +71,10 @@
     letter-spacing: 0.01em;
     color: var(--brand-grey);
     transition: color var(--transition);
-}
 
-.modal__item:not(:last-child) {
-    margin-bottom: 10px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
 }
 
 .modal__label {
@@ -102,17 +99,17 @@
     border-color: rgba(33, 33, 33, 0.2);
 
     transition: border-color var(--transition);
-}
 
-.modal__input--textarea {
-    padding: 12px 16px;
-    height: 96px;
-}
+    &--textarea {
+        padding: 12px 16px;
+        height: 96px;
+    }
 
-.modal__input--textarea::placeholder {
-    color: rgba(117, 117, 117, 0.5);
-    font-size: 12px;
-    line-height: 1.167;
+    &--textarea::placeholder {
+        color: rgba(117, 117, 117, 0.5);
+        font-size: 12px;
+        line-height: 1.167;
+    }
 }
 
 /* Іконки на полях введення */
@@ -151,60 +148,40 @@
     align-items: center;
     margin-bottom: 30px;
     transition: color var(--transition);
-}
 
 /* Стилі для загального label */
-.agreement__label {
-    display: flex;
-    align-items: center;
-    color: transparent;
-}
+    &__label {
+        display: flex;
+        align-items: center;
+        color: transparent;
+    }
 
-/* стилі іконки чекбоксу за замовчуванням */
-.agreement__icon {
-    display: flex;
-    align-items: center;
-    margin-right: 7px;
+    /* стилі іконки чекбоксу за замовчуванням */
+    &__icon {
+        display: flex;
+        align-items: center;
+        margin-right: 7px;
+        width: 16px;
+        height: 15px;
 
-    width: 16px;
-    height: 15px;
+        fill: currentColor;
+        border: 1px solid var(--brand-black);
+        border-radius: 4px;
+        transition: border-color var(--transition);
+    }
 
-    fill: currentColor;
+    /* Стилі тексту "приймаю умови" */
+    &__text {
+        font-size: 14px;
+        line-height: 1.71;
+        color: var(--brand-grey);
+    }
 
-    border: 1px solid var(--brand-black);
-    border-radius: 4px;
-    transition: border-color var(--transition);
-}
-
-/* Стилі тексту "приймаю умови" */
-.agreement__text {
-    font-size: 14px;
-    line-height: 1.71;
-    color: var(--brand-grey);
-}
-
-/* Додаткова стилізація посилання на "Умови договору" */
-.agreement__terms-link {
-    text-decoration: underline;
-    color: var(--brand-main-color);
-}
-
-/* Приховане поле input з type="checkbox" */
-/* Зміна стилю іконки чекбоксу при натисканні на .agreement  */
-.agreement__checkbox:checked+.agreement__icon {
-    /* background-origin: border-box; */
-    color: var(--brand-main-color);
-
-    background-color: var(--brand-main-color);
-    background-size: contain;
-
-    /* якщо не задати бордер=0, то іконка лишається зменшеною */
-    border: 0;
-}
-
-/* Малюю отулайн, бо інакше при фокусі через "TAB" фокусу не видно */
-.agreement__checkbox:focus+.agreement__icon {
-    outline: 1px solid var(--brand-black);
+    /* Додаткова стилізація посилання на "Умови договору" */
+    &__terms-link {
+        text-decoration: underline;
+        color: var(--brand-main-color);
+    }
 }
 
 /* Змінюю колір тексту при ховері/фокусі */
@@ -222,5 +199,22 @@
     border-color: var(--brand-main-color);
 }
 
+/* Приховане поле input з type="checkbox" */
+/* Зміна стилю іконки чекбоксу при натисканні на .agreement  */
+.agreement__checkbox:checked + .agreement__icon {
+    /* background-origin: border-box; */
+    color: var(--brand-main-color);
+
+    background-color: var(--brand-main-color);
+    background-size: contain;
+
+    /* якщо не задати бордер=0, то іконка лишається зменшеною */
+    border: 0;
+}
+
+/* Малюю отулайн, бо інакше при фокусі через "TAB" фокусу не видно */
+.agreement__checkbox:focus + .agreement__icon {
+    outline: 1px solid var(--brand-black);
+}
 /* === /Поле згоди з умовами === */
 /* ========== /МОДАЛЬНЕ ВІКНО ========== */

@@ -156,7 +156,7 @@ button {
     margin-right: 10px;
 }
 
-.social__link {
+.socials__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,19 +170,19 @@ button {
                 color var(--transition);
 }
 
-.social__link:hover,
-.social__link:focus {
+.socials__link:hover,
+.socials__link:focus {
     background-color: var(--brand-main-color);
     color: var(--simple-white);
 }
 
-.social__icon {
+.socials__icon {
     fill: currentColor;
     width: 20px;
     height: 20px;
 }
 
-.social__link--footer-colorize {
+.socials__link--footer-colorize {
     color: var(--simple-white);
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -213,7 +213,7 @@ button {
     border-bottom: 1px solid #ECECEC;
 }
 
-.head-nav {
+.nav-panel {
     display: flex;   /* для вирівнювання елементів у div */
 }
 
@@ -622,7 +622,7 @@ button {
     flex-direction: column;
 }
 
-.footer__subscribe-field input {
+.footer__subscribe-input {
     
     width: 358px;
     
@@ -636,11 +636,13 @@ button {
     color: var(--simple-white);
 }
 
-.footer__subscribe-field input::placeholder {
+.footer__subscribe-input::placeholder {
     font-size: 16px;
     line-height: 1.25;
     color: rgba(255, 255, 255, 0.6);
 }
+
+
 
 .footer__btn {
     margin-left: 12px;
