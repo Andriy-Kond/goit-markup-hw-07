@@ -2,6 +2,7 @@
 /* todo анімувати градієнтом карртинки по ховеру */
 /* todo перенос бекдропу */
 
+/* ========== ЗМІННІ ========== */
 :root {
     --brand-main-color: #2196f3;
     --brand-bg-color: #2F303A;
@@ -23,8 +24,10 @@
     --brand-logo-font: 'Raleway';
     --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* ========== /ЗМІННІ ========== */
 
-/* ========== Скидання стилів ========== */
+
+/* ========== СКИДАННЯ СТИЛІВ ========== */
 body {
     background-color: var(--simple-white);
     font-family: var(--brand-font), sans-serif;
@@ -63,11 +66,10 @@ textarea {
 button {
     cursor: pointer;
 }
-/* ========== /Скидання стилів ========== */
+/* ========== /СКИДАННЯ СТИЛІВ ========== */
 
 
-
-/* ========== Компоненти (блоки) ========== */
+/* ========== КОМПОНЕНТИ ========== */
 .visually-hidden {
     position: absolute;
     white-space: nowrap;
@@ -87,7 +89,7 @@ button {
 } */
 
 /* === Кнопки === */
-.button {
+.btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,12 +113,12 @@ button {
     transition: background-color var(--transition);
 }
 
-.button:hover,
-.button:focus {
+.btn:hover,
+.btn:focus {
     background-color: var(--btn-hover-color);
 }
 
-.icon-subscribe-button {
+.btn__subscribe-icon {
     width: 24px;
     height: 24px;
     fill: currentColor;
@@ -139,17 +141,21 @@ button {
     padding-bottom: 94px;
 }
 
-/* === соціальні мережі === */
+.section__offers {
+    padding-top: 0;
+}
+
+/* === Соціальні мережі === */
 .socials {
     display: flex;
     justify-content: center;
 }
 
-.social-item:not(:last-child) {
+.socials__item:not(:last-child) {
     margin-right: 10px;
 }
 
-.social-link {
+.social__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,29 +169,44 @@ button {
                 color var(--transition);
 }
 
-.social-link:hover,
-.social-link:focus {
+.social__link:hover,
+.social__link:focus {
     background-color: var(--brand-main-color);
     color: var(--simple-white);
 }
 
-.social-link-icon {
+.social__icon {
     fill: currentColor;
     width: 20px;
     height: 20px;
 }
 
-footer .social-link {
+.social__link--footer-colorize {
     color: var(--simple-white);
     background-color: rgba(255, 255, 255, 0.1);
 }
-/* === /соціальні мережі === */
+/* === /Соціальні мережі === */
 
-/* ========== /Компоненти ========== */
+/* оверлей (поки тільки на герої) */
+.overlay {
+    max-width: 1600px;
+    /* height: 600px; */
+    margin-left: auto;
+    margin-right: auto;
+
+    background-image:
+        linear-gradient(rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+        url("../images/background/hero-pic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #C4C4C4;
+}
+/* ========== /КОМПОНЕНТИ ========== */
 
 
-
-/* ========== Верхній рядок ========== */
+/* ========== ВЕРХНІЙ РЯДОК ========== */
 .head-border {
     border-bottom: 1px solid #ECECEC;
 }
@@ -210,16 +231,16 @@ footer .social-link {
     line-height: 1.2;
     color: var(--brand-main-color);
 }
-.logo-positive { 
+.logo--positive { 
     color: var(--logo-positive-color); 
 }
 
-.logo-negative { 
+.logo--negative { 
     color: var(--logo-negative-color); 
 }
 
 /* ховер лого по всій площині у заголовку */
-.nav>.logo {
+.nav__logo {
     padding-top: 24px;
     padding-bottom: 25px;
 }
@@ -228,13 +249,14 @@ footer .social-link {
 .menu {
     display: flex;
     margin-left: 93px;
+    user-select: none;
 }
 
-.menu-item:not(:last-child) {
+.menu__item:not(:last-child) {
     margin-right: 50px;
 }
 
-.menu-link {
+.menu__link {
     position: relative;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -247,7 +269,7 @@ footer .social-link {
     transition: color var(--transition);
 }
 
-.menu-link::after {
+.menu__link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -262,19 +284,19 @@ footer .social-link {
     transition: transform var(--transition);
 }
 
-.menu-link:hover::after,
-.menu-link:focus::after {
+.menu__link:hover::after,
+.menu__link:focus::after {
     transform: scale(1);
 }
 
-/* .menu-link */
+/* Підсвічування активної сторінки */
 .current {
     color: var(--brand-main-color);
 }
 .current::after {
     transform: scale(1);
 }
-
+/* /Підсвічування активної сторінки */
 
 /* Контакти в хедері */
 .contacts {
@@ -283,11 +305,11 @@ footer .social-link {
     align-items: center;
 }
 
-.contact-item + .contact-item {
-    margin-left: 30px;
+.contacts__item:not(:last-child) {
+    margin-right: 30px;
 }
 
-.contact-link {
+.contacts__link {
     display: flex;
     align-items: center;
 
@@ -302,22 +324,21 @@ footer .social-link {
     transition: color var(--transition);
 }
 
-.menu-link:hover,
-.menu-link:focus,
-.contact-link:hover,
-.contact-link:focus {
+.menu__link:hover,
+.menu__link:focus,
+.contacts__link:hover,
+.contacts__link:focus {
     color: var(--brand-main-color);
 }
 
-.icon-top-contacts {
+.contacts__icon {
     margin-right: 10px;
     fill: currentColor;
 }
-/* ========== /Верхній рядок ========== */
+/* ========== /ВЕРХНІЙ РЯДОК ========== */
 
 
-
-/* ========== Секція героя ========== */
+/* ========== ГЕРОЙ ========== */
 .hero {
     padding-top: 200px;
     padding-bottom: 200px;
@@ -326,24 +347,7 @@ footer .social-link {
     background-color: var(--brand-bg-color);
 }
 
-.overlay {
-    max-width: 1600px;
-    height: 600px;
-    margin-left: auto;
-    margin-right: auto;
-
-    background-image: 
-        linear-gradient(
-        rgba(47, 48, 58, 0.4),
-        rgba(47, 48, 58, 0.4) ),
-        url("../images/background/hero-pic.jpg");
-    background-repeat: no-repeat; 
-    background-position: center;
-    background-size: cover;
-    background-color: #C4C4C4;
-}
-
-.hero-title {
+.hero__title {
     margin-bottom: 30px;
 
     font-weight: 900;
@@ -353,25 +357,23 @@ footer .social-link {
     text-transform: uppercase;
     color: var(--simple-white);
 }
-
-/* ========== /Секція героя ========== */
-
+/* ========== /ГЕРОЙ ========== */
 
 
-/* ========== Особливості ========== */
+/* ========== ОСОБЛИВОСТІ ========== */
 .features { display: flex; }
 
-.features-item:not(:last-child) { 
+.features__item:not(:last-child) { 
     margin-right: 30px; 
 }
 
-.features-item {
+.features__item {
     display: block;
     justify-content: center;
     align-items: center;
 }
 
-.icon-features-box {
+.features__icon-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -382,12 +384,12 @@ footer .social-link {
     background-color: var(--brand-bg-grey);
 }
 
-.icon-features {
+.features__icon {
     height: 70px;
     width: 70px;
 }
 
-.features-title {
+.features__title {
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 14px;
@@ -396,20 +398,16 @@ footer .social-link {
     color: var(--brand-black);
 }
 
-.features-text {
+.features__text {
     font-size: 14px;
     line-height: 1.71;
     color: var(--brand-grey);
 }
-/* ========== /Особливості ========== */
+/* ========== /ОСОБЛИВОСТІ ========== */
 
 
-/* ========== Чим ми займаємось ========== */
-.section-offers {
-    padding-top: 0;
-}
-
-.section-title {
+/* ========== ЧИМ МИ ЗАЙМАЄМОСЬ ========== */
+.section__title {
     margin-bottom: 50px;
 
     font-weight: 700;
@@ -421,18 +419,18 @@ footer .social-link {
 
 .offers { 
     display: flex; 
+    user-select: none;
 }
 
-.offer-item + .offer-item { 
-    margin-left: 30px; 
+.offers__item:not(:last-child){ 
+    margin-right: 30px; 
 }
 
-.offer-container {
+.offers__icon-box {
     position: relative;
-
 }
 
-.offer-title {
+.offers__title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -453,11 +451,11 @@ footer .social-link {
     
     background-color: rgba(47, 48, 58, 0.8);
 }
-/* ========== /Чим ми займаємось ========== */
+/* ========== /ЧИМ МИ ЗАЙМАЄМОСЬ ========== */
 
 
-/* ========== Наша команда ========== */
-.section-team {
+/* ========== НАША КОМАНДА ========== */
+.section__team {
     background-color: var(--brand-bg-grey);
 }
 
@@ -465,23 +463,23 @@ footer .social-link {
     display: flex; 
 }
 
-.employee-item { 
+.employee__item { 
     align-items: center; 
 
     background-color: var(--simple-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.employee-item + .employee-item { 
-    margin-left: 30px; 
+.employee__item:not(:last-child) { 
+    margin-right: 30px; 
 }
 
-.employee-container {
+.employee__container {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-.employee-name {
+.employee__name {
     text-align: center;
     margin-bottom: 10px;
 
@@ -491,7 +489,7 @@ footer .social-link {
     color: var(--brand-black);
 }
 
-.employee-posiition {
+.employee__posiition {
     text-align: center;
     margin-bottom: 16px;
 
@@ -499,21 +497,21 @@ footer .social-link {
     line-height: 1.18;
     color: var(--brand-grey);
 }
-/* ========== /Наша команда ========== */
+/* ========== /НАША КОМАНДА ========== */
 
 
-/* ========== Постійні клієнти ========== */
+/* ========== ПОСТІЙНІ КЛІЄНТИ ========== */
 .customers {
     display: flex;
     justify-content: center;
     cursor: pointer;
 }
 
-.icon-customer:not(:last-child) {
+.customers__icon-box:not(:last-child) {
     margin-right: 30px;
 }
 
-.icon-customer {
+.customers__icon-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -521,8 +519,7 @@ footer .social-link {
     cursor: pointer;
 }
 
-
-.customer-link {
+.customers__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -535,22 +532,21 @@ footer .social-link {
                 border var(--transition);
 }
 
-.customer-link:hover,
-.customer-link:focus {
+.customers__link:hover,
+.customers__link:focus {
     color: var(--brand-main-color);
     border: 1px solid var(--brand-main-color);
 }
 
-.customer-link-icon {
+.customers__icon {
     fill: currentColor;
     width: 106px;
     height: 60px;
 }
-/* ========== /Постійні клієнти ========== */
+/* ========== /ПОСТІЙНІ КЛІЄНТИ ========== */
 
 
-
-/* ========== footer ========== */
+/* ========== FOOTER ========== */
 .footer {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -558,53 +554,53 @@ footer .social-link {
     background-color: var(--brand-bg-color);
 }
 
-.footer-columns {
+.footer__columns {
     align-items: baseline;
     display: flex;
 }
 
-.footeer-contat-column {
+.footer__contacts-box {
     flex-grow: 1;
 }
 
-footer .logo {
+.footer__logo {
     display: inline-block;
     margin-bottom: 20px;
 }
 
-.footer-address-decor {
+.address {
     font-style: normal;
     font-size: 14px;
     line-height: 1.71;
 }
 
-.footer-contact-item:not(:last-child) {
+.address__item:not(:last-child) {
     margin-bottom: 9px;
 }
 
-.footer-contact {
-    color: rgba(255, 255, 255, 0.6);
-    transition: color var(--transition);
-}
-
-.footer-address {
+.address__link {
     color: var(--simple-white);
     transition: color var(--transition);
 }
 
+.address__link--contact {
+    color: rgba(255, 255, 255, 0.6);
+    /* transition: color var(--transition); */
+}
+
 /* * «С5» Текст контактів в !хедері! і !футері! змінює колір при ховері і фокусі. */
-.footer-contact:hover,
-.footer-contact:focus,
-.footer-address:hover,
-.footer-address:focus {
+/* .address__link--contact:hover,
+.address__link--contact:focus, */
+.address__link:hover,
+.address__link:focus {
     color: var(--brand-main-color);
 }
 
-.footer-socials {
+.footer__socials-box {
     margin-left: 70px;
 }
 
-.footer-title {
+.footer__title {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -613,18 +609,18 @@ footer .logo {
     color: var(--simple-white);
 }
 
-.subscribe {
+.footer__subscribe-box {
     display: flex;
     margin-left: 93px;
     align-items: flex-end;
 }
 
-.subscribe-field {
+.footer__subscribe-field {
     display: flex;
     flex-direction: column;
 }
 
-    .subscribe-field input {
+.footer__subscribe-field input {
     
     width: 358px;
     
@@ -638,33 +634,29 @@ footer .logo {
     color: var(--simple-white);
 }
 
-.subscribe-field input::placeholder {
+.footer__subscribe-field input::placeholder {
     font-size: 16px;
     line-height: 1.25;
     color: rgba(255, 255, 255, 0.6);
 }
 
-.subscribe-button-box {
+.footer__btn {
     margin-left: 12px;
 }
-
-/* ========== /footer ========== */
-
-
-
+/* ========== /FOOTER ========== */
 
 
 /* ! Portfolio styles (main) */
-
-/* ========== фільр-кнопки ========== */
+/* ========== ФІЛЬТР-КНОПКИ ========== */
 /* todo Мають бути Радіо-кнопки */
 .filter-btns {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+    user-select: none;
 }
 
-.filter-btn {
+.filter-btns__btn {
     padding: 6px 22px;
 
     font-weight: 500;
@@ -680,59 +672,56 @@ footer .logo {
                 box-shadow var(--transition);
 }
 
-
-.filter-btn-item:not(:last-child) {
+.filter-btns__item:not(:last-child) {
     margin-right: 8px;
 }
 
-
-.filter-btn:hover,
-.filter-btn:focus {
+.filter-btns__btn:hover,
+.filter-btns__btn:focus {
     color: var(--simple-white);
     background-color: var(--brand-main-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
                 0px 1px 2px rgba(0, 0, 0, 0.08),
                 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-/* ========== /фільр-кнопки ========== */
+/* ========== /ФІЛЬТР-КНОПКИ ========== */
 
 
-
-/* ========== Зразки робіт (картки) ========== */
+/* ========== ЗРАЗКИ РОБІТ (КАРТКИ) ========== */
 .cards {
     display: flex;
     flex-wrap: wrap;
 }
 
-.card-item:not(:nth-child(3n)) {
+.cards__item:not(:nth-child(3n)) {
     margin-right: 30px;
 }
 
-.card-item:not(:nth-last-child(-n+3)) {
+.cards__item:not(:nth-last-child(-n+3)) {
     margin-bottom: 30px;
 }
 
-.card-item-link {
+.cards__link {
     display: block; /* без цього не працює ховер. Чому? */
     transition: box-shadow var(--transition);
 }
 
-.card-item-link:hover,
-.card-item-link:focus {
+.cards__link:hover,
+.cards__link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
                 0px 4px 4px rgba(0, 0, 0, 0.06),
                 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* === Анімація по картці === */
-.card-item-animation {
+.cards__animation {
     position: relative;
     
     /* ховаємо все, що виходить за рамки елементу */
     overflow: hidden;
 }
 
-.card-item-animation::before {
+.cards__animation::before {
     content: "";
     display: block;
     position: absolute;
@@ -749,7 +738,7 @@ footer .logo {
                 opacity var(--transition);
 }
 
-.card-item-text {
+.cards__text {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -762,9 +751,8 @@ footer .logo {
 
     padding: 24px;
 
-    /* даємо тексту скролл*/
+    /* даємо тексту скролл, якщо буде переповнення контенту */
     overflow: auto;
-
 
     font-size: 18px;
     line-height: 1.56;
@@ -776,17 +764,17 @@ footer .logo {
                 opacity var(--transition);
 }
 
-.card-item-link:hover .card-item-animation::before,
-.card-item-link:focus .card-item-animation::before,
-.card-item-link:hover .card-item-text,
-.card-item-link:focus .card-item-text {
+.cards__link:hover .cards__animation::before,
+.cards__link:focus .cards__animation::before,
+.cards__link:hover .cards__text,
+.cards__link:focus .cards__text {
     opacity: 1;
     transform: translate(0, 0);
 }
 /* === /Анімація по картці === */
 
 /* * «B17» У картках на сторінці Портфоліо є рамка (властивість border), але тільки у нижній частині картки. */
-.card-item-frame {
+.cards__frame {
     padding: 20px 24px;
 
     border-left: 1px solid #EEEEEE;
@@ -794,7 +782,7 @@ footer .logo {
     border-bottom: 1px solid #EEEEEE;
 }
 
-.card-item-title {
+.cards__title {
     margin-bottom: 4px;
 
     font-weight: 700;
@@ -804,17 +792,15 @@ footer .logo {
     color: var(--brand-black);
 }
 
-.card-item-description {
+.cards__description {
     font-size: 16px;
     line-height: 1.88;
     color: var(--brand-grey);
 }
-/* ========== /Зразки робіт (картки) ========== */
-
+/* ========== /ЗРАЗКИ РОБІТ (КАРТКИ) ========== */
 
 
 /* ========== МОДАЛЬНЕ ВІКНО ========== */
-
 /* Оверлей модального вікна */
 .backdrop {
     position: fixed;
@@ -841,7 +827,7 @@ footer .logo {
 }
 /* /Оверлей модального вікна */
 
-/* Основне вікно */
+/* Головне вікно */
 .modal {
     position: absolute;
     top: 50%;
@@ -854,10 +840,13 @@ footer .logo {
     
     transform: translate(-50%, -50%) scale(1);
     transition: transform var(--transition);
+
+    /* Заборона виділення текстуу, щоб не заважало користувачу */
+    user-select: none;
 }
 
-/* Кнопка закриття зверху праворуч */
-.button-close {
+/* === Кнопка закриття зверху праворуч === */
+.btn-close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -876,22 +865,22 @@ footer .logo {
                 color var(--transition);
 }
 
-.button-close:hover,
-.button-close:focus {
+.btn-close:hover,
+.btn-close:focus {
     color: var(--brand-main-color);
 }
 
-.button-close-icon {
+.btn-close__icon {
     fill: currentColor;
     width: 18px;
     height: 18px;
     background-position: 50% 50%;
     background-origin: border-box;
 }
-/* /Кнопка закриття зверху праворуч */
+/* === /Кнопка закриття зверху праворуч === */
 
-/* заголовок */
-.modal-header {
+/* Заголовок модального вікна*/
+.modal__header {
     display: block;
     margin-bottom: 12px;
 
@@ -902,13 +891,14 @@ footer .logo {
     color: var(--brand-black);
 }
 
-/* Поля форми */
-.form-fields {
+/* Загальні стилі */
+.modal__fields {
     margin-bottom: 20px;
     text-align: left;
 }
 
-.form-field-item {
+/* === Стилі полів ввведення інформацції === */
+.modal__item {
     display: flex;
     flex-direction: column;
 
@@ -919,11 +909,22 @@ footer .logo {
     transition: color var(--transition);
 }
 
-.form-field-item:not(:last-child) {
+.modal__item:not(:last-child) {
     margin-bottom: 10px;
 }
 
-.form-field-item .type {
+.modal__label {
+    margin-bottom: 4px;
+}
+
+.modal__input-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: var(--brand-black);
+}
+
+.modal__input {
     padding: 12px 16px 12px 42px;
 
     font-size: 16px;
@@ -936,41 +937,19 @@ footer .logo {
     transition: border-color var(--transition);
 }
 
-.form-field-item .type--textarea {
+.modal__input--textarea {
     padding: 12px 16px;
     height: 96px;
 }
-/* /Поля форми */
 
-/* бордер на полях введення (може не треба?), і оутлайн коли прибрали мишку з поля */
-.form-field-item:focus .type,
-.form-field-item:hover .type,
-.form-field-item .type:focus-within {
-    /* border-color: var(--brand-main-color); */
-    outline: 1px solid var(--brand-main-color);
-}
-
-/* стилі плейсхолдера */
-.form-field-item .type--textarea::placeholder {
+.modal__input--textarea::placeholder {
     color: rgba(117, 117, 117, 0.5);
     font-size: 12px;
     line-height: 1.167;
 }
 
-.label {
-    display: block;
-    margin-bottom: 4px;
-}
-
 /* Іконки на полях введення */
-.modal-box-icon {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    color: var(--brand-black);
-}
-
-.form-icon {
+.modal__icon {
     position: absolute;
     width: 18px;
     height: 18px;
@@ -981,15 +960,24 @@ footer .logo {
     fill: currentColor;
 }
 
-.form-field-item:focus-within .form-icon,
-.form-field-item:focus .form-icon,
-.form-field-item:hover .form-icon {
+/* фарбуємо оутлайн полів вводу при ховері, фокусі і коли курсор у полі введення */
+.modal__item:focus .modal__input,
+.modal__item:hover .modal__input,
+.modal__input:focus-within {
+    /* border-color: var(--brand-main-color); */
+    outline: 1px solid var(--brand-main-color);
+}
+
+/* фарбуємо іконки по ховеру і фокусу, а також коли курсор у полі введення */
+.modal__item:focus-within .modal__icon,
+.modal__item:focus .modal__icon,
+.modal__item:hover .modal__icon {
     color: var(--brand-main-color);
 }
-/* /Іконки на полях введення */
+/* === /Стилі полів ввведення інформацції === */
 
-/* поле згоди з умовами */
-.accept-module {
+/* === Поле згоди з умовами === */
+.agreement {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -997,52 +985,45 @@ footer .logo {
     transition: color var(--transition);
 }
 
-.accept-module:hover,
-.accept-module:focus {
-    color: var(--brand-main-color);
-    /* outline: 1px solid var(--brand-main-color); */
-    /* border: 1px solid var(--brand-main-color); */
-    /* border-radius: 4px; */
-}
-
-/* міняю колір іконки чек-боксу при ховері/фокусі */
-.accept-module:hover .icon-checked,
-.accept-module:focus .icon-checked {
-    border-color: var(--brand-main-color);
-}
-
-/* lable з іконкою чекбокосу і текстом "приймаю умови" */
-.accepting {
-    display: flex;
-
-    font-size: 14px;
-    line-height: 1.71;
-}
-
-/* коробка з іконкою чекбоксу - за замовчуванням без кольору */
-.icon-accept-box {
+/* Стилі для загального label */
+.agreement__label {
     display: flex;
     align-items: center;
-    margin-right: 7px;
-
     color: transparent;
 }
 
 /* стилі іконки чекбоксу за замовчуванням */
-.icon-checked {
+.agreement__icon {
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+
     width: 16px;
     height: 15px;
 
     fill: currentColor;
-    
+
     border: 1px solid var(--brand-black);
     border-radius: 4px;
     transition: border-color var(--transition);
 }
 
-/* приховане поле input з type="checkbox" */
-/* зміна стилю іконки чекбоксу при натисканні на .accept-module  */
-.checkboxed:checked + label .icon-checked {
+/* Стилі тексту "приймаю умови" */
+.agreement__text {
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--brand-grey);
+}
+
+/* Додаткова стилізація посилання на "Умови договору" */
+.agreement__terms-link {
+    text-decoration: underline;
+    color: var(--brand-main-color);
+}
+
+/* Приховане поле input з type="checkbox" */
+/* Зміна стилю іконки чекбоксу при натисканні на .agreement  */
+.agreement__checkbox:checked + .agreement__icon {
     /* background-origin: border-box; */
     color: var(--brand-main-color);
 
@@ -1053,13 +1034,24 @@ footer .logo {
     border: 0;
 }
 
-.checkboxed:focus+label .icon-checked {
-    outline: 1px solid black;
+/* Малюю отулайн, бо інакше при фокусі через "TAB" фокусу не видно */
+.agreement__checkbox:focus+.agreement__icon {
+    outline: 1px solid var(--brand-black);
 }
 
-/* додаткова стилізація посилання на "Умови договору" */
-.link-terms {
-    text-decoration: underline;
+/* Змінюю колір тексту при ховері/фокусі */
+.agreement:hover .agreement__text,
+.agreement:focus .agreement__text {
     color: var(--brand-main-color);
+    /* outline: 1px solid var(--brand-main-color); */
+    /* border: 1px solid var(--brand-main-color); */
+    /* border-radius: 4px; */
 }
+
+/* Змінюю колір бордера іконки при ховері/фокусі */
+.agreement:hover .agreement__icon,
+.agreement:focus .agreement__icon {
+    border-color: var(--brand-main-color);
+}
+/* === /Поле згоди з умовами === */
 /* ========== /МОДАЛЬНЕ ВІКНО ========== */
