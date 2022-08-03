@@ -1,23 +1,18 @@
 /* ========== ВЕРХНІЙ РЯДОК ========== */
-.head-border {
+.header {
     border-bottom: 1px solid #ECECEC;
-}
-
-.nav-panel {
-    display: flex;
-    /* для вирівнювання елементів у div */
 }
 
 /* навігація (flex для лого+меню)*/
 .nav {
     display: flex;
     align-items: center;
+}
 
 /* ховер лого по всій площині у заголовку */
-    &__logo {
-        padding-top: 24px;
-        padding-bottom: 25px;
-    }
+.nav__logo {
+    padding-top: 24px;
+    padding-bottom: 25px;
 }
 
 /* Меню */
@@ -25,10 +20,10 @@
     display: flex;
     margin-left: 93px;
     user-select: none;
+}
 
-    &__item:not(:last-child) {
-        margin-right: 50px;
-    }
+.menu__item:not(:last-child) {
+    margin-right: 50px;
 }
 
 .menu__link {
@@ -58,7 +53,8 @@
         transform: scale(0);
         transition: transform var(--transition);
     }
-/* Поява підкреслювання під назвою по ховеру/фокусу */
+
+    /* Поява підкреслювання під назвою по ховеру/фокусу */
     &:hover::after,
     &:focus::after {
         transform: scale(1);
@@ -66,7 +62,7 @@
 }
 
 /* Підсвічування активної сторінки */
-.current {
+.menu__link--current {
     color: var(--brand-main-color);
 
     &::after {
@@ -79,30 +75,30 @@
     display: flex;
     margin-left: auto;
     align-items: center;
+}
 
-    &__item:not(:last-child) {
-        margin-right: 30px;
-    }
+.contacts__item:not(:last-child) {
+    margin-right: 30px;
+}
 
-    &__icon {
-        margin-right: 10px;
-        fill: currentColor;
-    }
+.contacts__icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
 
-    &__link {
-        display: flex;
-        align-items: center;
+.contacts__link {
+    display: flex;
+    align-items: center;
 
-        padding-top: 22px;
-        padding-bottom: 22px;
+    padding-top: 22px;
+    padding-bottom: 22px;
 
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.14;
-        letter-spacing: 0.02em;
-        color: var(--brand-grey);
-        transition: color var(--transition);
-    }
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--brand-grey);
+    transition: color var(--transition);
 }
 
 .menu__link:hover,

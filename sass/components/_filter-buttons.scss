@@ -5,10 +5,10 @@
     justify-content: center;
     margin-bottom: 50px;
     user-select: none;
+}
 
-    &__item:not(:last-child) {
-        margin-right: 8px;
-    }
+.filter-btns__item:not(:last-child) {
+    margin-right: 8px;
 }
 
 .filter-btns__btn {

@@ -1,34 +1,30 @@
 /* ========== НАША КОМАНДА ========== */
-.section__team {
-    background-color: var(--brand-bg-grey);
-}
-
 .employee {
     display: flex;
+}
 
-    &__container {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
+.employee__container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
-    &__name {
-        text-align: center;
-        margin-bottom: 10px;
+.employee__title {
+    text-align: center;
+    margin-bottom: 10px;
 
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.18;
-        color: var(--brand-black);
-    }
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.18;
+    color: var(--brand-black);
+}
 
-    &__posiition {
-        text-align: center;
-        margin-bottom: 16px;
+.employee__text {
+    text-align: center;
+    margin-bottom: 16px;
 
-        font-size: 16px;
-        line-height: 1.18;
-        color: var(--brand-grey);
-    }
+    font-size: 16px;
+    line-height: 1.18;
+    color: var(--brand-grey);
 }
 
 .employee__item {

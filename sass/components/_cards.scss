@@ -2,65 +2,65 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
+}
 
-    &__item:not(:nth-child(3n)) {
-        margin-right: 30px;
-    }
+.cards__item:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
 
-    &__item:not(:nth-last-child(-n+3)) {
-        margin-bottom: 30px;
-    }
+.cards__item:not(:nth-last-child(-n+3)) {
+    margin-bottom: 30px;
+}
 
-    &__text {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.cards__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-        padding: 24px;
+    padding: 24px;
 
-        /* даємо тексту скролл, якщо буде переповнення контенту */
-        overflow: auto;
+    /* даємо тексту скролл, якщо буде переповнення контенту */
+    overflow: auto;
 
-        font-size: 18px;
-        line-height: 1.56;
-        color: var(--simple-white);
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--simple-white);
 
-        opacity: 0;
-        transform: translate(0, 100%);
-        transition: transform var(--transition), 
-                    opacity var(--transition);
-    }
+    opacity: 0;
+    transform: translate(0, 100%);
+    transition: transform var(--transition),
+        opacity var(--transition);
+}
 
 /* * «B17» У картках на сторінці Портфоліо є рамка (властивість border), але тільки у нижній частині картки. */
-    &__frame {
-        padding: 20px 24px;
+.cards__frame {
+    padding: 20px 24px;
 
-        border-left: 1px solid #EEEEEE;
-        border-right: 1px solid #EEEEEE;
-        border-bottom: 1px solid #EEEEEE;
-    }
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
 
-    &__title {
-        margin-bottom: 4px;
+.cards__title {
+    margin-bottom: 4px;
 
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 2;
-        letter-spacing: 0.06em;
-        color: var(--brand-black);
-    }
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--brand-black);
+}
 
-    &__description {
-        font-size: 16px;
-        line-height: 1.88;
-        color: var(--brand-grey);
-    }
+.cards__description {
+    font-size: 16px;
+    line-height: 1.88;
+    color: var(--brand-grey);
 }
 
 .cards__link {

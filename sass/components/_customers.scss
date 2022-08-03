@@ -3,15 +3,15 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-
-    &__icon {
-        fill: currentColor;
-        width: 106px;
-        height: 60px;
-    }
 }
 
-.customers__icon-box {
+.customers__icon {
+    fill: currentColor;
+    width: 106px;
+    height: 60px;
+}
+
+.customers__item {
     display: flex;
     justify-content: center;
     align-items: center;

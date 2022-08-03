@@ -16,25 +16,25 @@
 
     <!-- стилі -->
     <link rel="stylesheet" href="./css/modern-normalize.css" />
-    <link rel="stylesheet" href="./css/main.min.css"/>
+    <link rel="stylesheet" href="./css/main.min.css" />
     <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
   </head>
 
   <body>
     <!-- верхній рядок -->
-    <header class="head-border">
-      <div class="container nav-panel">
+    <header class="header">
+      <div class="container">
         <!-- Навігація-->
         <nav class="nav">
           <!-- логотип -->
           <a href="./" class="logo nav__logo">
-            Web<span class="logo--positive">Studio</span>
+            Web<span class="logo__dark">Studio</span>
           </a>
 
           <!-- Меню -->
           <ul class="menu">
             <li class="menu__item">
-              <a href="./" class="menu__link current">Студія</a>
+              <a href="./" class="menu__link menu__link--current">Студія</a>
             </li>
 
             <li class="menu__item">
@@ -44,33 +44,33 @@
               <a href="./" class="menu__link">Контакти</a>
             </li>
           </ul>
-        </nav>
 
-        <!-- Контакти  в хедері-->
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a href="mailto:info@devstudio.com" class="contacts__link">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/background/icons.svg#email"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="contacs__item">
-            <a href="tel:+380961111111" class="contacts__link">
-              <svg class="contacts__icon" width="10" height="16">
-                <use href="./images/background/icons.svg#smartphone"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
+          <!-- Контакти  в хедері-->
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a href="mailto:info@devstudio.com" class="contacts__link">
+                <svg class="contacts__icon" width="16" height="12">
+                  <use href="./images/background/icons.svg#email"></use>
+                </svg>
+                info@devstudio.com
+              </a>
+            </li>
+            <li class="contacs__item">
+              <a href="tel:+380961111111" class="contacts__link">
+                <svg class="contacts__icon" width="10" height="16">
+                  <use href="./images/background/icons.svg#smartphone"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <main>
       <!-- Секція героя -->
-      <section class="hero overlay">
+      <section class="hero">
         <div class="container">
           <h1 class="hero__title">
             Ефективні рішення <br />
@@ -146,7 +146,7 @@
       </section>
 
       <!-- чим ми займаємось -->
-      <section class="section section__offers">
+      <section class="section section--null-padding-top">
         <div class="container">
           <h2 class="section__title">Чим ми займаємось</h2>
           <!-- блок світлин -->
@@ -159,7 +159,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="offers__title">Десктопні застосунки</p>
+                <p class="offers__text">Десктопні застосунки</p>
               </div>
             </li>
 
@@ -171,7 +171,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="offers__title">Мобільні застосунки</p>
+                <p class="offers__text">Мобільні застосунки</p>
               </div>
             </li>
 
@@ -183,7 +183,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="offers__title">Дизайнерські рішення</p>
+                <p class="offers__text">Дизайнерські рішення</p>
               </div>
             </li>
           </ul>
@@ -191,7 +191,7 @@
       </section>
 
       <!-- наша команда -->
-      <section class="section section__team">
+      <section class="section section--bg-grey">
         <div class="container">
           <h2 class="section__title">Наша команда</h2>
           <!-- блок карток співробітників -->
@@ -204,8 +204,8 @@
                 height="260"
               />
               <div class="employee__container">
-                <h3 class="employee__name">Ігорь Дем'яненко</h3>
-                <p class="employee__posiition">Product Designer</p>
+                <h3 class="employee__title">Ігорь Дем'яненко</h3>
+                <p class="employee__text">Product Designer</p>
 
                 <ul class="socials">
                   <li class="socials__item">
@@ -277,8 +277,8 @@
                 height="260"
               />
               <div class="employee__container">
-                <h3 class="employee__name">Ольга Репіна</h3>
-                <p class="employee__posiition">Frontend Developer</p>
+                <h3 class="employee__title">Ольга Репіна</h3>
+                <p class="employee__text">Frontend Developer</p>
                 <ul class="socials">
                   <li class="socials__item">
                     <a
@@ -349,8 +349,8 @@
                 height="260"
               />
               <div class="employee__container">
-                <h3 class="employee__name">Микола Тарасов</h3>
-                <p class="employee__posiition">Marketing</p>
+                <h3 class="employee__title">Микола Тарасов</h3>
+                <p class="employee__text">Marketing</p>
                 <ul class="socials">
                   <li class="socials__item">
                     <a
@@ -421,8 +421,8 @@
                 height="260"
               />
               <div class="employee__container">
-                <h3 class="employee__name">Михайло Єрмаков</h3>
-                <p class="employee__posiition">UI Designer</p>
+                <h3 class="employee__title">Михайло Єрмаков</h3>
+                <p class="employee__text">UI Designer</p>
                 <ul class="socials">
                   <li class="socials__item">
                     <a
@@ -494,7 +494,7 @@
           <h2 class="section__title">Постійні клієнти</h2>
 
           <ul class="customers">
-            <li class="customers__icon-box">
+            <li class="customers__item">
               <a
                 class="customers__link"
                 href="https://minusrus.com/"
@@ -506,7 +506,7 @@
                 </svg>
               </a>
             </li>
-            <li class="customers__icon-box">
+            <li class="customers__item">
               <a
                 class="customers__link"
                 href="https://minusrus.com/"
@@ -518,7 +518,7 @@
                 </svg>
               </a>
             </li>
-            <li class="customers__icon-box">
+            <li class="customers__item">
               <a
                 class="customers__link"
                 href="https://minusrus.com/"
@@ -530,7 +530,7 @@
                 </svg>
               </a>
             </li>
-            <li class="customers__icon-box">
+            <li class="customers__item">
               <a
                 class="customers__link"
                 href="https://minusrus.com/"
@@ -542,7 +542,7 @@
                 </svg>
               </a>
             </li>
-            <li class="customers__icon-box">
+            <li class="customers__item">
               <a
                 class="customers__link"
                 href="https://minusrus.com/"
@@ -554,7 +554,7 @@
                 </svg>
               </a>
             </li>
-            <li class="customers__icon-box">
+            <li class="customers__item">
               <a
                 class="customers__link"
                 href="https://minusrus.com/"
@@ -579,7 +579,7 @@
           <!-- Стовпчик №1 - контакти -->
           <div class="footer__contats-box">
             <a href="./" class="logo footer__logo"
-              >Web<span class="logo--negative">Studio</span></a
+              >Web<span class="logo__light">Studio</span></a
             >
 
             <address class="address">

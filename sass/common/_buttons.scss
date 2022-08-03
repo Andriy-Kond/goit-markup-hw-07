@@ -26,14 +26,12 @@
     &:focus {
         background-color: var(--btn-hover-color);
     }
-
-    &__subscribe-icon {
-        width: 24px;
-        height: 24px;
-        fill: currentColor;
-        margin-left: 10px;
-    }
-    
+}
+.btn__subscribe-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    margin-left: 10px;
 }
 /* === /Кнопка основна === */
 
@@ -59,14 +57,14 @@
     &:focus {
         color: var(--brand-main-color);
     }
+}
 
-    &__icon {
-        fill: currentColor;
-        width: 18px;
-        height: 18px;
-        background-position: 50% 50%;
-        background-origin: border-box;
-    }
+.btn-close__icon {
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+    background-position: 50% 50%;
+    background-origin: border-box;
 }
 
 

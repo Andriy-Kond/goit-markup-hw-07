@@ -7,15 +7,14 @@
     font-size: 26px;
     line-height: 1.2;
     color: var(--brand-main-color);
-
-    &--positive {
-        color: var(--logo-positive-color);
-    }
-
-    &--negative {
-        color: var(--logo-negative-color);
-    }
-
-    /* /Стилізація logo */
 }
+
+.logo__dark {
+    color: var(--logo-positive-color);
+}
+
+.logo__light {
+    color: var(--logo-negative-color);
+}
+/* /Стилізація logo */
 

@@ -2,16 +2,16 @@
 .socials {
     display: flex;
     justify-content: center;
+}
 
-    &__item:not(:last-child) {
-        margin-right: 10px;
-    }
+.socials__item:not(:last-child) {
+    margin-right: 10px;
+}
 
-    &__icon {
-        fill: currentColor;
-        width: 20px;
-        height: 20px;
-    }
+.socials__icon {
+    fill: currentColor;
+    width: 20px;
+    height: 20px;
 }
 
 .socials__link {
@@ -32,11 +32,11 @@
         background-color: var(--brand-main-color);
         color: var(--simple-white);
     }
-    
-    &--footer-colorize {
+}
+
+.socials__link--footer-colorize {
     color: var(--simple-white);
     background-color: rgba(255, 255, 255, 0.1);
-    }
 }
 
 
