@@ -1,4 +1,23 @@
 @charset "UTF-8";
+/* ========== ЗМІННІ ========== */
+:root {
+  --brand-main-color: #2196f3;
+  --brand-bg-color: #2F303A;
+  --brand-black: #212121;
+  --brand-grey: #757575;
+  --brand-bg-grey: #F5F4FA;
+  --btn-hover-color: #188CE8;
+  --icons-grey: #AFB1B8;
+  --logo-positive-color: #000;
+  --logo-negative-color: #fff;
+  --simple-white: #fff;
+  --brand-font: "Roboto";
+  --brand-letter-spacing: 0.03em;
+  --brand-logo-font: "Raleway";
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== /ЗМІННІ ========== */
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -309,25 +328,6 @@ button {
 }
 
 /* ========== /СКИДАННЯ СТИЛІВ ========== */
-/* ========== ЗМІННІ ========== */
-:root {
-  --brand-main-color: #2196f3;
-  --brand-bg-color: #2F303A;
-  --brand-black: #212121;
-  --brand-grey: #757575;
-  --brand-bg-grey: #F5F4FA;
-  --btn-hover-color: #188CE8;
-  --icons-grey: #AFB1B8;
-  --logo-positive-color: #000;
-  --logo-negative-color: #fff;
-  --simple-white: #fff;
-  --brand-font: "Roboto";
-  --brand-letter-spacing: 0.03em;
-  --brand-logo-font: "Raleway";
-  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ========== /ЗМІННІ ========== */
 /* === Кнопка основна === */
 .btn {
   display: -webkit-box;
@@ -524,6 +524,7 @@ button {
 }
 
 /* === /Соціальні мережі === */
+/* todo Закріпити хедер */
 /* ========== ВЕРХНІЙ РЯДОК ========== */
 .header {
   border-bottom: 1px solid #ECECEC;
@@ -1170,6 +1171,7 @@ button {
 }
 
 /* ========== /FOOTER ========== */
+/* todo make autofocus on modal */
 /* ========== МОДАЛЬНЕ ВІКНО ========== */
 /* Оверлей модального вікна */
 .backdrop {
@@ -1201,6 +1203,13 @@ button {
 /* /Оверлей модального вікна */
 /* Головне вікно */
 .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1215,10 +1224,6 @@ button {
   transition: transform var(--transition);
   transition: transform var(--transition), -webkit-transform var(--transition);
   /* Заборона виділення текстуу, щоб не заважало користувачу */
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 /* Заголовок модального вікна*/
@@ -1227,19 +1232,17 @@ button {
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
   color: var(--brand-black);
 }
 
-/* Загальні стилі */
-.modal__header__fields {
+.modal__fields {
   margin-bottom: 20px;
-  text-align: left;
 }
 
 /* === Стилі полів ввведення інформацції === */
-.modal__item {
+.modal__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1248,18 +1251,14 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: 12px;
-  line-height: 1.67;
+  line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--brand-grey);
   -webkit-transition: color var(--transition);
   transition: color var(--transition);
 }
-.modal__item:not(:last-child) {
+.modal__label:not(:last-child) {
   margin-bottom: 10px;
-}
-
-.modal__label {
-  margin-bottom: 4px;
 }
 
 .modal__input-box {
@@ -1274,10 +1273,13 @@ button {
   color: var(--brand-black);
 }
 
+.modal__text {
+  margin-bottom: 4px;
+}
+
 .modal__input {
   padding: 12px 16px 12px 42px;
   font-size: 16px;
-  line-height: 1.14;
   border: 1px solid;
   border-radius: 4px;
   border-color: rgba(33, 33, 33, 0.2);
@@ -1285,8 +1287,23 @@ button {
   transition: border-color var(--transition);
 }
 
+.modal__input:not(:-moz-placeholder-shown):required:invalid {
+  border-color: #f44336;
+  outline-width: 0;
+}
+
+.modal__input:not(:-ms-input-placeholder):required:invalid {
+  border-color: #f44336;
+  outline-width: 0;
+}
+
+.modal__input:not(:placeholder-shown):required:invalid {
+  border-color: #f44336;
+  outline-width: 0;
+}
+
 .modal__input--textarea {
-  padding: 12px 16px;
+  padding-left: 16px;
   height: 96px;
 }
 .modal__input--textarea::-webkit-input-placeholder {
@@ -1328,48 +1345,20 @@ button {
 }
 
 /* фарбуємо оутлайн полів вводу при ховері, фокусі і коли курсор у полі введення */
-.modal__item:focus .modal__input,
-.modal__item:hover .modal__input,
+.modal__label:focus .modal__input,
 .modal__input:focus-within {
-  /* border-color: var(--brand-main-color); */
-  outline: 1px solid var(--brand-main-color);
+  border-color: var(--brand-main-color);
+  outline-width: 0;
 }
 
 /* фарбуємо іконки по ховеру і фокусу, а також коли курсор у полі введення */
-.modal__item:focus-within .modal__icon,
-.modal__item:focus .modal__icon,
-.modal__item:hover .modal__icon {
+.modal__label:focus .modal__icon,
+.modal__label:focus-within .modal__icon {
   color: var(--brand-main-color);
 }
 
 /* === /Стилі полів ввведення інформацції === */
 /* === Поле згоди з умовами === */
-.agreement {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 30px;
-  -webkit-transition: color var(--transition);
-  transition: color var(--transition);
-  /* Змінюю колір тексту при ховері/фокусі */
-  /* Змінюю колір бордера іконки при ховері/фокусі */
-}
-.agreement:hover .agreement__text, .agreement:focus .agreement__text {
-  color: var(--brand-main-color);
-  /* outline: 1px solid var(--brand-main-color); */
-  /* border: 1px solid var(--brand-main-color); */
-  /* border-radius: 4px; */
-}
-.agreement:hover .agreement__icon, .agreement:focus .agreement__icon {
-  border-color: var(--brand-main-color);
-}
-
 /* Стилі для загального label */
 .agreement__label {
   display: -webkit-box;
@@ -1378,7 +1367,22 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
   color: transparent;
+  /* Змінюю колір тексту при ховері/фокусі */
+  /* Змінюю колір бордера іконки при ховері/фокусі */
+}
+.agreement__label:hover .agreement__text, .agreement__label:focus .agreement__text {
+  color: var(--brand-main-color);
+  /* outline: 1px solid var(--brand-main-color); */
+  /* border: 1px solid var(--brand-main-color); */
+  /* border-radius: 4px; */
+}
+.agreement__label:hover .agreement__icon, .agreement__label:focus .agreement__icon {
+  border-color: var(--brand-main-color);
 }
 
 /* стилі іконки чекбоксу за замовчуванням */
@@ -1404,6 +1408,8 @@ button {
   font-size: 14px;
   line-height: 1.71;
   color: var(--brand-grey);
+  -webkit-transition: color var(--transition);
+  transition: color var(--transition);
 }
 
 /* Додаткова стилізація посилання на "Умови договору" */

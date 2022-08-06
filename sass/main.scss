@@ -1,9 +1,10 @@
+// Змінні
+@import "./utils/variables";
+
 // Нормалізація стилів
 @import "./base/modern-normalize";
 @import "./base/project-normalize";
 
-// Змінні
-@import "./utils/variables";
 
 // Загальні компоненти
 @import "./common/buttons";
